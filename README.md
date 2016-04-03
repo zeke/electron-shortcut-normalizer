@@ -45,10 +45,6 @@ normalize('Option+Up')
 // => 'Alt+Up'
 ```
 
-- On Mac OS X, `process.platform` is `darwin`
-- On Windows, it's `win32` (even on 64 bit)
-- Other possible values are `freebsd`, `linux`, `sunos`
-
 For more specific usage information, see [test.js](/test.js)
 
 ## See Also
