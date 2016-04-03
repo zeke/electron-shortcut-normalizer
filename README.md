@@ -8,7 +8,7 @@ Normalize [electron keyboard shortcuts](https://github.com/atom/electron/blob/ma
 - [x] makes your electron keyboard shortcuts platform-agnostic
 - [x] can make them platform-specific too
 - [x] accepts target `platform` in an options object
-- [x] converts Option to Alt, because Alt exists on all platforms
+- [x] converts `Option` to `Alt`, because `Alt` exists on all platforms
 - [x] converts `CmdOrCtrl` modifier to `CommandOrControl`
 - [x] supports mixed-case modifiers like `MediaPreviousTrack`
 - [x] capitalizes first letter of each modifier
