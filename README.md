@@ -2,7 +2,7 @@
 
 Normalize [electron keyboard shortcuts](https://github.com/atom/electron/blob/master/docs/api/accelerator.md#readme) so they work on different operating systems.
 
-![shortcut](https://cloud.githubusercontent.com/assets/2289/14230694/9c80cc92-f916-11e5-921d-5dafbc8e5070.png)
+![shortcut](https://cloud.githubusercontent.com/assets/2289/14234573/0f3e0c52-f99b-11e5-9e59-804400e752d6.png)
 
 - [x] is a function
 - [x] makes your electron keyboard shortcuts platform-agnostic
