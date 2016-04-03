@@ -1,11 +1,11 @@
 # electron-shortcut-normalizer
 
-Normalize electron keyboard shortcuts so they work on different operating systems
+Normalize [electron keyboard shortcuts](https://github.com/atom/electron/blob/master/docs/api/accelerator.md#readme) so they work on different operating systems.
 
 ![shortcut](https://cloud.githubusercontent.com/assets/2289/14230694/9c80cc92-f916-11e5-921d-5dafbc8e5070.png)
 
 - [x] is a function
-- [x] makes your keyboard shortcuts platform-agnostic
+- [x] makes your electron keyboard shortcuts platform-agnostic
 - [x] can make them platform-specific too
 - [x] accepts target `platform` in an options object
 - [x] converts Option to Alt, because Alt exists on all platforms
