@@ -25,7 +25,6 @@ npm install electron-shortcut-normalizer --save
 
 ```js
 const normalize = require("electron-shortcut-normalizer")
-``
 
 normalize('Ctrl+A')
 // => 'CommandOrControl+A'
