@@ -7,12 +7,12 @@ Normalize [electron keyboard shortcuts](https://github.com/atom/electron/blob/ma
 - [x] is a function
 - [x] makes your electron keyboard shortcuts platform-agnostic
 - [x] can make them platform-specific too
-- [x] accepts target `platform` in an options object
-- [x] converts `Option` to `Alt`, because `Alt` exists on all platforms
-- [x] converts `CmdOrCtrl` modifier to `CommandOrControl`
-- [x] supports mixed-case modifiers like `MediaPreviousTrack`
+- [x] accepts target <kbd>platform</kbd> in an options object
+- [x] converts <kbd>Option</kbd> to <kbd>Alt</kbd>, because <kbd>Alt</kbd> exists on all platforms
+- [x] converts <kbd>CmdOrCtrl</kbd> modifier to <kbd>CommandOrControl</kbd>
+- [x] supports mixed-case modifiers like <kbd>MediaPreviousTrack`
 - [x] capitalizes first letter of each modifier
-- [x] removes whitespace from shorcuts
+- [x] removes whitespace from shortcuts
 - [x] converts hyphens (-) to plusses (+)
 
 ## Installation
