@@ -1,5 +1,5 @@
 const tape = require('tape')
-const n = require('./')
+const n = require('.')
 
 tape('electron-shortcut-normalizer', function (test) {
   eq = test.equal

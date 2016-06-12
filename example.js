@@ -1,4 +1,4 @@
-const normalize = require('./')
+const normalize = require('.')
 
 // Make a shortcut platform-agnostic:
 normalize('Ctrl+A')
