@@ -10,10 +10,15 @@ module.exports = function (shortcut, options) {
   shortcut = shortcut
     .replace(/\s/g, '')
     .replace(/option/i, 'Alt')
-    .replace(/(commandorcontrol|cmdorctrl|ctrl|command)/i, 'CommandOrControl')
+    .replace(/(commandorcontrol|cmdorctrl|ctrl|command|cmd)/i, 'CommandOrControl')
     .split('+')
     .map(part => part[0].toUpperCase() + part.slice(1))
     .join('+')
+
+  if(options.asSymbols) {
+      shortcut = shortcut.replace('Shift', '⇧');
+      shortcut = shortcut.replace('Tab', '⇥');
+  }
 
   switch (options.platform) {
     case 'darwin':
