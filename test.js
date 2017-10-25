@@ -18,5 +18,10 @@ tape('electron-shortcut-normalizer', function (test) {
   eq(n('Ctrl+L', 'win32'), 'Control+L', 'converts shorthand windows to longhand')
   eq(n('CmdOrCtrl+m', 'win32'), 'Control+M', 'converts longhand agnostic to windows')
   eq(n('CommandOrControl+N', 'win32'), 'Control+N', 'converts shorthand agnostic to windows')
+  
+  eq(n('CommandOrControl+K', {platform: 'darwin', asSymbols: true}), '⌘+K', '(symbols) accepts target `platform` in an options object')
+  eq(n('Control+K', {platform: 'darwin', asSymbols: true}), '^+K', '(symbols) accepts target `platform` in an options object')
+  eq(n('Alt+K', {platform: 'darwin', asSymbols: true}), '⎇+K', '(symbols) accepts target `platform` in an options object')
+  eq(n('Option+K', {platform: 'darwin', asSymbols: true}), '⎇+K', '(symbols) accepts target `platform` in an options object')
   test.end()
 })

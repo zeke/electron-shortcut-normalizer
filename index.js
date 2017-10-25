@@ -1,7 +1,7 @@
 module.exports = function (shortcut, options) {
 
   if (!options) options = {}
-  if (typeof options === 'string') options = {platform: options}
+  if (typeof options === 'string') options = {platform: options, asSymbols: false}
 
   shortcut = shortcut
     .replace(/\s/g, '')
@@ -14,7 +14,14 @@ module.exports = function (shortcut, options) {
 
   switch (options.platform) {
     case 'darwin':
-      return shortcut.replace('CommandOrControl', 'Command')
+      if(!options.asSymbols) {
+        return shortcut.replace('CommandOrControl', 'Command')
+      }
+      else {
+        shortcut = shortcut.replace('CommandOrControl', '⌘');
+        shortcut = shortcut.replace('Alt', '⎇');
+        return shortcut = shortcut.replace('Control', '^');
+      }
     case 'linux':
     case 'freebsd':
     case 'sunos':
