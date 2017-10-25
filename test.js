@@ -13,6 +13,7 @@ tape('electron-shortcut-normalizer', function (test) {
   eq(n('ctrl+w'), 'CommandOrControl+W', 'capitalizes first letter of each modifier')
   eq(n(' Ctrl + A '), 'CommandOrControl+A', 'removes whitespace from shortcuts')
   eq(n('ctrl-alt-o'), 'CommandOrControl+Alt+O', 'converts hyphens (-) to plusses (+)')
+  eq(n('ctrl+-', {hyphensToPlus: false}), 'CommandOrControl+-', 'test - key')
 
   eq(n('Command+L', 'win32'), 'Control+L', 'converts mac shortcuts to windows')
   eq(n('Ctrl+L', 'win32'), 'Control+L', 'converts shorthand windows to longhand')

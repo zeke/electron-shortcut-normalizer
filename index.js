@@ -1,11 +1,14 @@
 module.exports = function (shortcut, options) {
 
-  if (!options) options = {}
-  if (typeof options === 'string') options = {platform: options, asSymbols: false}
+  if (!options) options = {asSymbols: false, hyphensToPlus: true}
+  if (typeof options === 'string') options = {platform: options, asSymbols: false, hyphensToPlus: true}
 
+  if(options.hyphensToPlus) {
+    shortcut = shortcut.replace(/-/g, '+')
+  }
+  
   shortcut = shortcut
     .replace(/\s/g, '')
-    .replace(/-/g, '+')
     .replace(/option/i, 'Alt')
     .replace(/(commandorcontrol|cmdorctrl|ctrl|command)/i, 'CommandOrControl')
     .split('+')
