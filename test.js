@@ -15,6 +15,7 @@ tape('electron-shortcut-normalizer', function (test) {
   eq(n(' Ctrl + A '), 'CommandOrControl+A', 'removes whitespace from shortcuts')
   eq(n('ctrl-alt-o'), 'CommandOrControl+Alt+O', 'converts hyphens (-) to plusses (+)')
   eq(n('ctrl+-', {hyphensToPlus: false}), 'CommandOrControl+-', 'test - key')
+  eq(n('ctrl+-', {hyphensToPlus: false, controlAsCmd: false}), 'Ctrl+-', 'Ctrl as Ctrl key')
 
   eq(n('Command+L', 'win32'), 'Control+L', 'converts mac shortcuts to windows')
   eq(n('Ctrl+L', 'win32'), 'Control+L', 'converts shorthand windows to longhand')
@@ -22,7 +23,8 @@ tape('electron-shortcut-normalizer', function (test) {
   eq(n('CommandOrControl+N', 'win32'), 'Control+N', 'converts shorthand agnostic to windows')
   
   eq(n('CommandOrControl+K', {platform: 'darwin', asSymbols: true}), '⌘+K', '(symbols) accepts target `platform` in an options object')
-  eq(n('Control+K', {platform: 'darwin', asSymbols: true}), '^+K', '(symbols) accepts target `platform` in an options object')
+  eq(n('Control+K', {platform: 'darwin', asSymbols: true}), '⌘+K', '(symbols) accepts target `platform` in an options object')
+  eq(n('Control+K', {platform: 'darwin', asSymbols: true, controlAsCmd: false}), '^+K', '(symbols) accepts target `platform` in an options object')
   eq(n('Alt+K', {platform: 'darwin', asSymbols: true}), '⎇+K', '(symbols) accepts target `platform` in an options object')
   eq(n('Option+K', {platform: 'darwin', asSymbols: true}), '⎇+K', '(symbols) accepts target `platform` in an options object')
   eq(n('Option+Shift+K', {platform: 'darwin', asSymbols: true}), '⎇+⇧+K', '(symbols) accepts target `platform` in an options object')

@@ -1,7 +1,7 @@
 module.exports = function (shortcut, options) {
 
-  if (!options) options = {asSymbols: false, hyphensToPlus: true}
-  if (typeof options === 'string') options = {platform: options, asSymbols: false, hyphensToPlus: true}
+  if (!options) options = {asSymbols: false, hyphensToPlus: true, controlAsCmd: true}
+  if (typeof options === 'string') options = {platform: options, asSymbols: false, hyphensToPlus: true, controlAsCmd: true}
 
   if(options.hyphensToPlus) {
     shortcut = shortcut.replace(/-/g, '+')
@@ -9,9 +9,15 @@ module.exports = function (shortcut, options) {
   
   shortcut = shortcut
     .replace(/\s/g, '')
-    .replace(/option/i, 'Alt')
-    .replace(/(commandorcontrol|cmdorctrl|ctrl|command|cmd)/i, 'CommandOrControl')
-    .split('+')
+    .replace(/option/i, 'Alt');
+    if(options.controlAsCmd === undefined || options.controlAsCmd === true) {
+      shortcut = shortcut.replace(/(commandorcontrol|cmdorctrl|ctrl|control|command|cmd)/i, 'CommandOrControl');
+    }
+    else {
+      shortcut = shortcut.replace(/(commandorcontrol|cmdorctrl|command|cmd)/i, 'CommandOrControl');
+    }
+    
+    shortcut = shortcut.split('+')
     .map(part => part[0].toUpperCase() + part.slice(1))
     .join('+')
 
